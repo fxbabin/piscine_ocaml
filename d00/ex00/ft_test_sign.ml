@@ -1,4 +1,4 @@
-let ft_test_sign num : unit =
+let ft_test_sign num: unit =
     if num >= 0
     then print_endline("positive")
     else print_endline("negative")

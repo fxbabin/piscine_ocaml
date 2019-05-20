@@ -1,12 +1,12 @@
-let ft_print_alphabet () =
+let ft_print_alphabet (): unit =
   let rec loop num =
-    if num > 122 then print_char('\n')
+    if num > int_of_char('z') then print_char('\n')
     else begin
         print_char(char_of_int(num));
         loop (num + 1)
     end
   in
-  loop 97
+  loop (int_of_char('a'))
 
 let main() =
   ft_print_alphabet();

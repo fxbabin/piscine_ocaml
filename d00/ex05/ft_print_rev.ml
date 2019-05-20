@@ -1,4 +1,4 @@
-let ft_print_rev str =
+let ft_print_rev str: unit =
   let rec loop str_len =
     if str_len < 0 then print_char('\n')
     else begin
