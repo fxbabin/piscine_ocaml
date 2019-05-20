@@ -1,12 +1,13 @@
-let rec ft_countdown num =
-  if num > 0
-  then
-    begin
+let rec ft_countdown num: unit =
+  if num > 0 then begin
       print_int(num);
-      print_endline("");
+      print_char('\n');
       ft_countdown(num - 1);
-    end
-  else print_endline("0");
+  end
+  else begin
+    print_char('0');
+    print_char('\n');
+  end
 ;;
 
 let main() =
