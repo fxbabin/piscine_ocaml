@@ -1,5 +1,5 @@
 let absolute_float (n: float) =
-  if n < 0.0 then n *. -1.0
+  if n < 0.0 then -.n
   else n
 
 let leibniz_pi (delta: float) = 
