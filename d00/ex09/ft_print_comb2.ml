@@ -1,4 +1,4 @@
-let print_comb2 i j k l: unit =
+let print_comb2 i j k l =
   if i == 9 && j == 8 && k == 9 && l == 9 then begin
     print_int(i);
     print_int(j);
@@ -17,7 +17,7 @@ let print_comb2 i j k l: unit =
     print_char(' ');
   end
 
-let ft_print_comb2 (): unit =
+let ft_print_comb2 () =
   let rec loop i j k l =
     if i == 9 && j == 9 then ()
     else if j == 10 then loop (i + 1) 0 (i + 1) 1

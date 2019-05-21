@@ -1,8 +1,8 @@
-let is_digit c : bool =
+let is_digit c =
   if c >= '0' && c <= '9' then true
   else false 
 
-let ft_string_all (f : char -> bool) str =
+let ft_string_all f str =
   let rec loop idx str_len =
     if idx == str_len then true
     else if f (String.get str idx) == false then false 
