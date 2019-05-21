@@ -1,4 +1,4 @@
-let ft_print_alphabet (): unit =
+let ft_print_alphabet () =
   let rec loop num =
     if num > int_of_char('z') then print_char('\n')
     else begin
@@ -9,7 +9,6 @@ let ft_print_alphabet (): unit =
   loop (int_of_char('a'))
 
 let main() =
-  ft_print_alphabet();
-;;
+  ft_print_alphabet()
 
 let () = main ()

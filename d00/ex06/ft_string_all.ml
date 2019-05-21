@@ -8,8 +8,7 @@ let ft_string_all (f : char -> bool) str =
     else if f (String.get str idx) == false then false 
     else loop (idx + 1) str_len
   in
-  loop 0 (String.length str);
-;;
+  loop 0 (String.length str)
 
 let print_bool boo = 
   if boo == true then print_string("true\n")
@@ -19,7 +18,6 @@ let main () =
   print_bool(ft_string_all is_digit "0123456789");
   print_bool(ft_string_all is_digit "0123456789s");
   print_bool(ft_string_all is_digit "");
-  print_bool(ft_string_all is_digit "swdded");
-;;
+  print_bool(ft_string_all is_digit "swdded")
 
 let () = main ()

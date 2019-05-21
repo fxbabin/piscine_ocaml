@@ -6,8 +6,7 @@ let ft_rot_n num str =
       char_of_int(int_of_char('A') + ((int_of_char(c) - int_of_char('A') + num) mod 26))
     else c
   in
-  String.map ft_rot_char str;
-;;
+  String.map ft_rot_char str
 
 let main () =
   print_string(ft_rot_n 1 "abcdefghijklmnopqrstuvwxyz");
@@ -23,7 +22,6 @@ let main () =
   print_string(ft_rot_n 42 "");
   print_char('\n');
   print_string(ft_rot_n 1 "NBzlk qnbjr !");
-  print_char('\n');
-;;
+  print_char('\n')
 
 let () = main ()

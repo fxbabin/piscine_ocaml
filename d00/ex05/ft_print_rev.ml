@@ -6,12 +6,10 @@ let ft_print_rev str: unit =
       loop (str_len - 1);
     end
   in
-  loop ((String.length str) - 1);
-;;
+  loop ((String.length str) - 1)
 
 let main() =
   ft_print_rev "Hello world !";
-  ft_print_rev "";
-;;
+  ft_print_rev ""
 
 let () = main ()

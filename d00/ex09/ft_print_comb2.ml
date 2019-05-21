@@ -28,11 +28,9 @@ let ft_print_comb2 (): unit =
       loop i j k (l + 1);
     end
   in
-  loop 0 0 0 1;
-;;
+  loop 0 0 0 1
 
 let main() =
-  ft_print_comb2 ();
-;;
+  ft_print_comb2 ()
 
 let () = main ()
