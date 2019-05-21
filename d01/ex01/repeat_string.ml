@@ -7,7 +7,6 @@ let repeat_string ?(str="x") n =
     in
     repeat_aux 0 "";
   end
-;;
 
 let main () =
   print_string(repeat_string (-1));
@@ -25,7 +24,6 @@ let main () =
   print_string(repeat_string ~str:"" 3);
   print_endline("");
   print_string(repeat_string ~str:"xx" 3);
-  print_endline("");
-;;
+  print_endline("")
 
 let () = main ()

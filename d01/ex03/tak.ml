@@ -14,7 +14,6 @@ let main () =
   print_int(tak 0 42 0);
   print_endline("");
   print_int(tak 23498 98734 98776);
-  print_endline("");
-;;
+  print_endline("")
 
 let () = main ()
