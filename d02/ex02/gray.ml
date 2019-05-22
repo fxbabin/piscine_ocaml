@@ -27,13 +27,6 @@ let gray n =
     else concat_list_gray (aux (n - 1)) (reverse_list (aux (n - 1)))
   in list_to_string (reverse_list (aux n))
 
-let rec print_list =
-      function
-      | [] -> print_string("END \n")
-      | head :: rest ->
-        Printf.printf "%s; " head;
-        print_list rest
-
 let main () =
   print_endline(gray 1);
   print_endline(gray 2);
