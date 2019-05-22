@@ -1,25 +1,29 @@
-let crossover lst1 lst2 =
-  let rec encode_aux nb acc = function
-    | [] -> []
-    | [e] -> acc @ [(nb + 1, e)]
-    | prev :: (next :: _ as tail) -> if prev = next then encode_aux (nb + 1) acc tail
-                                     else encode_aux 0 (acc @ [(nb + 1, prev)]) tail
-  in encode_aux 0 []
+let contains elem =
+  let rec aux = function
+    | [] -> false
+    | head :: tail ->
+        if head = elem then true
+        else aux tail
+  in aux
 
-let rec print_tuples =
-function
-| [] -> print_string("END \n")
-| (a, b) :: rest ->
-  Printf.printf "%i, %s; " a b;
-  print_tuples rest
+let crossover lst1 lst2 =
+  let rec aux acc = function
+    | [] -> []
+    | [e] -> acc @ [e]
+    | head :: tail ->
+        if (contains head lst2) && (contains head acc) == false then aux (acc @ [head]) tail
+        else aux acc tail
+    in aux [] lst1 
+
+let rec print_list =
+      function
+      | [] -> print_string("END \n")
+      | head :: rest ->
+        Printf.printf "%s; " head;
+        print_list rest
 
 let main () =
-print_tuples [(3, "toto");(1, "a")];
-print_tuples (encode []);
-print_tuples (encode ["a"]);
-print_tuples (encode ["a"; "a"]);
-print_tuples (encode ["a"; "a"; "a"]);
-print_tuples (encode ["a"; "a"; "a"; "a"]);
-print_tuples (encode ["a"; "a"; "a"; "a"; "b"; "b"; "d"])
+  print_endline(string_of_bool (contains "d" ["a"; "b"]));
+  print_list(crossover ["c"; "a"] ["a"; "b"; "c"])
 
 let () = main ()
