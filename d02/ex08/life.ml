@@ -166,10 +166,8 @@ let decode_arn (rna: rna) =
 let life (str: string) = 
   let xx = generate_helix 10 in
   print_endline(helix_to_string xx);
-  print_endline(helix_to_string (complementary_helix xx));
   print_endline(rna_to_string (generate_rna xx));
   print_endline(print_triplets (generate_bases_triplets (generate_rna xx)));
-  print_endline(string_of_protein [Ala; Arg; Stop]);
   print_endline(string_of_protein (decode_arn (generate_rna xx)))
 
 let main () =
