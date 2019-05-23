@@ -25,12 +25,14 @@ let gray n =
     if n <= 0 then []
     else if n == 1 then ["0"; "1"]
     else concat_list_gray (aux (n - 1)) (reverse_list (aux (n - 1)))
-  in list_to_string (reverse_list (aux n))
+  in print_endline (list_to_string (reverse_list (aux n)))
 
 let main () =
-  print_endline(gray 1);
-  print_endline(gray 2);
-  print_endline(gray 3);
-  print_endline(gray 4)
+  gray (-1);
+  gray 0;
+  gray 1;
+  gray 2;
+  gray 3;
+  gray 4
 
 let () = main ()
