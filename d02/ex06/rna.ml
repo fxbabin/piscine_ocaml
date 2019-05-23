@@ -1,6 +1,6 @@
 type phosphate = string
 type deoxyribose = string
-type nucleobase = A | T | C | G | None
+type nucleobase = A | T | U | C | G | None
 type nucleotide = {
     phosphate: phosphate;
     deoxyribose: deoxyribose;
@@ -8,12 +8,14 @@ type nucleotide = {
 }
 
 type helix = nucleotide list
+type rna = nucleobase list
 
 let print_nucleobase nuc = match nuc with 
   | A -> "A"
   | C -> "C"
   | T -> "T"
   | G -> "G"
+  | U -> "U"
   | None -> "None"
 
 let comp_nucleobase nuc = match nuc with 
@@ -21,6 +23,15 @@ let comp_nucleobase nuc = match nuc with
   | C -> G
   | T -> A
   | G -> C
+  | U -> A
+  | None -> None
+
+let comp_rna_encode nuc = match nuc with 
+  | A -> U
+  | C -> G
+  | T -> A
+  | G -> C
+  | U -> A
   | None -> None
 
 let get_nucleobase nuc = match nuc with 
@@ -57,9 +68,17 @@ let complementary_helix =
     | head :: tail -> aux (acc @ [(generate_nucleotide (comp_nucleobase head.nucleobase))]) tail
   in aux []
 
+let generate_rna =
+  let rec aux acc = function
+    | [] -> []  
+    | [e] -> (acc @ [(generate_nucleotide (comp_rna_encode e.nucleobase))])
+    | head :: tail -> aux (acc @ [(generate_nucleotide (comp_rna_encode head.nucleobase))]) tail
+  in aux []
+
 let main () =
   let xx = generate_helix 10 in
   print_endline(helix_to_string xx);
-  print_endline(helix_to_string (complementary_helix xx))
-      
+  print_endline(helix_to_string (complementary_helix xx));
+  print_endline(helix_to_string (generate_rna xx))
+
 let () = main ()
