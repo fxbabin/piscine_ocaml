@@ -46,8 +46,8 @@ let generate_helix n : helix =
 let helix_to_string (helix: helix) =
   let rec aux acc = function
     | [] -> ""  
-    | [e] -> (print_nucleobase e.nucleobase) ^ acc
-    | head :: tail -> aux ((print_nucleobase head.nucleobase) ^ acc) tail
+    | [e] ->  acc ^ (print_nucleobase e.nucleobase)
+    | head :: tail -> aux (acc ^ (print_nucleobase head.nucleobase)) tail
   in aux "" helix
 
 let complementary_helix (helix: helix) : helix =
