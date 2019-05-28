@@ -28,4 +28,3 @@ let () =
   print_endline("");
   print_int(get (bind ref_x (fun x -> {contents = x + 1})));
   print_endline("")
-;;
