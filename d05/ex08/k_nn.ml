@@ -103,16 +103,16 @@ let k_nn (tuples: radar list) k (radar: radar): string =
   for i = 0 to (k - 1) do
       acc := !acc @ [snd (List.nth sorted_dist i)];
   done; 
-  let ss = List.sort compare_string !acc in
-  let x = encode ss in
+  let sorted_names = List.sort compare_string !acc in
+  let occurences = encode sorted_names in
   let max = ref 0 in
   let max_name = ref "" in
-  for i = 0 to ((List.length x) - 1) do
-    let d = fst (List.nth x i) in
-    if d > !max then
+  for i = 0 to ((List.length occurences) - 1) do
+    let dist = fst (List.nth occurences i) in
+    if dist > !max then
       begin
-        max := d;
-        max_name := (snd (List.nth x i));
+        max := dist;
+        max_name := (snd (List.nth occurences i));
       end
 done; !max_name
 
