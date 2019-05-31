@@ -3,14 +3,10 @@ let () =
   print_endline (test#name ^ " " ^ test#formula);
   let test = new Molecule.carbon_dioxyde in
   print_endline (test#name ^ " " ^ test#formula);
-  let test = new Molecule.chlorophyll in
+  let test = new Molecule.dihydrogen in
   print_endline (test#name ^ " " ^ test#formula);
-  let test = new Molecule.adenosine_triphosphate in
+  let test = new Molecule.cholesterol in
   print_endline (test#name ^ " " ^ test#formula);
-  let test = new Molecule.oleanolic_acid in
-  print_endline (test#name ^ " " ^ test#formula);
-  let test = new Molecule.tetrodotoxin in
-  print_endline (test#name ^ " " ^ test#formula);
-  let test = new Molecule.aspirin in
+  let test = new Molecule.stearic_acid in
   print_endline (test#name ^ " " ^ test#formula);
   ()
